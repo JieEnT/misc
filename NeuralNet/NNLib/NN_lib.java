@@ -75,6 +75,31 @@ public class NN_lib {
         return transposedMatrix;
     }
 
-    
+    //Need to obtain sigmoid derivtive for backpropagation
+    // dE/dw = dE/dy_final * dy_final/dy * dy/dw
+    // dy_final = sigmoid(dy)
+    // dy_final/dy = (1 - dy_final) * dy_final
+    public static Matrix sigmoidDerivative(Matrix mm) {
+        Matrix derivativeMatrix = new Matrix(mm.rows, mm.cols);
+
+        for(int i = 0; i < mm.rows; i++){
+            for(int j = 0; j < mm.cols; j++){
+                derivativeMatrix.data[i][j] = mm.data[i][j];
+            }
+        }
+
+        return derivativeMatrix;
+    }
+
+    //Creation of a matrix from an array so as to perform matrix operations
+    public static Matrix arrayToMatrix(double[] input){
+        Matrix result = new Matrix(input.length, 1);
+
+        for(int i = 0; i < input.length; i++){
+            result.data[i][0] = input[i];
+        }
+
+        return result;
+    }
 
 }
