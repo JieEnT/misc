@@ -81,7 +81,8 @@ class NN{
         
         //Matrix hiddenErrors = NN_lib.matrixSubtraction(hiddenOutputWeightsTranspose, hiddenLayer); //Doesn't work since this is the hiddenoutput weights while hiddenlayer is currently the prediction
 
-        //Ahttps://www.javatpoint.com/pytorch-backpropagation-process-in-deep-neural-network
+        //https://www.javatpoint.com/pytorch-backpropagation-process-in-deep-neural-network
+        //We will need to differentiate the final output with respect to the prediced values d(y1) / d(H1_final) where y1 = h1 * w5 + h2 * w6
         Matrix hiddenErrors = NN_lib.matrixMultiplication(oldHiddenOutputWeightsTranspose, error); 
 
         Matrix hiddenGradient = NN_lib.sigmoidDerivative(hiddenLayer);
