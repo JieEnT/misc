@@ -52,7 +52,7 @@ public class Matrix {
         }
     }
 
-    public void multiplyElementByElement(Matrix mm){
+    public void multiplyMatrix(Matrix mm){
         double[][] matrix = mm.data;
         int matrixRow = matrix.length;
         int matrixCol = matrix[0].length;
@@ -71,7 +71,7 @@ public class Matrix {
     public void multiplyLearningRate(double lr) {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                data[i][j] *= data[i][j];
+                data[i][j] *= lr;
             }
         }
     }

@@ -11,6 +11,9 @@ public class NN_lib {
             }
             System.out.println();
         }
+
+        System.out.println();
+
     }
 
     public static Matrix matrixMultiplication(Matrix a, Matrix b) {
